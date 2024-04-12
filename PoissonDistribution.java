@@ -6,7 +6,7 @@ class PoissonDistribution {
        double[] expVal = new double[nums.length];
        
        for (int i = 0; i < nums.length; i++) {
-           prob[i] = poissonProbability(lastKnown, nums[i]);
+           prob[i] = poissonProbabilityMassFunction(lastKnown, nums[i]);
            expVal[i] = nums[i] * prob[i];
        }
        
@@ -14,7 +14,7 @@ class PoissonDistribution {
        printArray(expVal);
     }
     
-    static double poissonProbability(int l, int y) {
+    static double poissonProbabilityMassFunction(int l, int y) {
         double p = (Math.pow(l, y) * (1 / Math.pow(2.72, l)) ) / factorial(y);
         return p;
     }
